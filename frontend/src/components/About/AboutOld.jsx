@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./About.css";
@@ -21,6 +22,7 @@ import img6_gradient from "../../assets/MUAY_THAI_gradient.webp";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  /* const nav = useNavigate(); */
   const imageRef = useRef(null);
   const sectionRef = useRef(null);
   const [hoveredImage, setHoveredImage] = useState(null);
@@ -92,30 +94,6 @@ const About = () => {
     },
   ];
 
-  useEffect(() => {
-    const cards = gsap.utils.toArray(".stack-card");
-
-    cards.forEach((card) => {
-      ScrollTrigger.create({
-        trigger: card,
-        start: "top 20%", // Trigger when 20% of the viewport is available
-        pin: true,
-        pinSpacing: false,
-        onUpdate: (self) => {
-          if (self.progress > 0.3) {
-            gsap.to(card, { autoAlpha: 0 });
-          } else {
-            gsap.to(card, { autoAlpha: 1 });
-          }
-        },
-      });
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
   return (
     <section className="about-section" id="about" ref={sectionRef}>
       <div className="content-container">
@@ -132,8 +110,6 @@ const About = () => {
           we have the right course for you. For your active recovery, you can
           also attend our yoga classes or book a relaxing massage.
         </p>
-
-        {/* Grid View for Larger Screens */}
         <div className="grid-container">
           {gridItems.map((item) => (
             <div
@@ -148,21 +124,8 @@ const About = () => {
                   hoveredImage === item.id ? item.gradientImg : item.defaultImg
                 }
                 alt={item.title}
+                /* onClick={ nav(item.redirect) } */
               />
-            </div>
-          ))}
-        </div>
-
-        {/* Stacked Cards View for Mobile */}
-        <div className="stacked-cards-container">
-          {gridItems.map((item) => (
-            <div className="stack-card panel" key={item.id}>
-              <img
-                src={item.defaultImg}
-                alt={item.title}
-                className="stack-card-image"
-              />
-              <h2 className="stack-card-title">{item.title}</h2>
             </div>
           ))}
         </div>
