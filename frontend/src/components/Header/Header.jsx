@@ -58,11 +58,7 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <a href="#">
-        <img
-          className={`logo ${isScrolled ? "scrolled" : ""}`}
-          src="https://cdn.prod.website-files.com/655f1188cf5e283d9d642d99/65782e12af1d447a19a36eac_fenriz-logo.svg"
-          alt="Logo"
-        />
+        <h1 className={`logo ${isScrolled ? "scrolled" : ""}`}>Martial Arts</h1>
       </a>
       <nav className="nav-menu">
         <a href="#about">About</a>

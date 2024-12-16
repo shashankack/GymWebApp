@@ -1,0 +1,125 @@
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 2rem;
+}
+
+.content-container {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.about-heading {
+  font-family: Keyan-Coffee;
+  font-size: 7rem;
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.image-wrapper img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  left: 43%;
+  top: 10%;
+  transform: translate(-10% -50%);
+}
+
+.gradient-underline{
+  width: 10px;
+  height: auto;
+  position: relative;
+}
+
+.about-text {
+  display: block;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #444;
+  max-width: 800px;
+  margin-top: 3rem;
+  line-height: 1.6;
+}
+
+.grid-container {
+  display: grid;
+  padding: 0 15%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.grid-item {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.grid-item img {
+  width: 100%; 
+  height: auto;
+  object-fit: cover;
+  display: block;
+  scale: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.grid-item:hover img {
+  transition: ease-in-out 0.5s;
+  transform: scale(1.1);
+}
+
+.grid-item h2 {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease-in-out;
+  font-size: 3rem;
+  font-variant: small-caps;
+  font-family: Keyan-Coffee;
+  color: #fff; 
+  padding: 0.5rem 1rem;
+  border-radius: 5px; 
+  text-align: center;
+  z-index: 5;
+}
+
+.grid-item:hover h2 {
+  transition: transform 0.5s;
+  transform: translate(-50%, -80%);
+}
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 5%;
+  }
+
+  .about-heading {
+    font-size: 4rem;
+  }
+
+  .gradient-underline{
+    width: 20px;
+    height: auto;
+  }
+
+  
+  
+}

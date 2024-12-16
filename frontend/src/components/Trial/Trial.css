@@ -1,0 +1,52 @@
+.trial-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  background-color: #1c1c1c;
+  text-align: center;
+  position: relative;
+}
+
+.trial-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 30%;
+}
+
+.trial-title {
+  font-size: 5rem;
+  margin-bottom: 3rem;
+  color: #fff;
+  font-family: Keyan-Coffee;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-wrap: nowrap;
+  position: relative; /* Overlaps the gradient image */
+  z-index: 2; /* Ensures the text appears above the image */
+}
+
+.gradient-underline {
+  margin-top: -19em;
+  width: 30%;
+  height: auto;
+  rotate: 90deg; 
+  position: absolute;
+  z-index: 1;
+}
+
+.trial-text {
+  margin: 1% 0;
+  color: #fff;
+  font-size: 20px;
+  text-align: start;
+  align-self: start;
+}
+
+.trial-image {
+  width: 20%;
+  height: auto;
+}
