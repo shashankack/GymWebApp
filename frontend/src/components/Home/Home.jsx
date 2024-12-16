@@ -46,13 +46,13 @@ const Home = () => {
           Martial arts.
         </h1>
         <h1 ref={(el) => (homeTitleRef.current[1] = el)} className="hero-title">
-          From Kreuzberg.
+          From Raghu.
         </h1>
         <h1 ref={(el) => (homeTitleRef.current[2] = el)} className="hero-title">
           With Love.
         </h1>
         <p ref={homeTextRef} className="hero-text">
-          Come by and train with us in the heart of Berlin. A fantastic
+          Come by and train with us in Bengaluru. A fantastic
           community with experienced coaches awaits you. Together, we bring out
           the best in you.
         </p>

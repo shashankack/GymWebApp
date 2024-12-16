@@ -58,7 +58,7 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <a href="#">
-        <h1 className={`logo ${isScrolled ? "scrolled" : ""}`}>Martial Arts</h1>
+        <h1 className={`logo ${isScrolled ? "scrolled" : ""}`}>Raghu</h1>
       </a>
       <nav className="nav-menu">
         <a href="#about">About</a>
