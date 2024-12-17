@@ -94,13 +94,13 @@ const About = () => {
 
   useEffect(() => {
     const cards = gsap.utils.toArray(".stack-card");
-
+  
     cards.forEach((card, index) => {
       const isLastCard = index === cards.length - 1;
-
+  
       ScrollTrigger.create({
         trigger: card,
-        start: "top 15%",
+        start: "top 15%", 
         pin: !isLastCard, // Do not pin the last card
         pinSpacing: isLastCard, // Allow spacing for smooth scroll transition
         onUpdate: (self) => {
@@ -114,11 +114,12 @@ const About = () => {
         },
       });
     });
-
+  
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
+  
 
   return (
     <section className="about-section" id="about" ref={sectionRef}>
