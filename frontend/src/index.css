@@ -3,3 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+@font-face {
+    font-family: Kenyan-Coffee;
+    src: url(./assets/Kenyan-Coffee-Rg.otf);
+}

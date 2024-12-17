@@ -1,0 +1,28 @@
+footer {
+  height: 50vh;
+  background-color: #111;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+section.footer-container {
+  height: 50vh;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo {
+  font-size: 7rem;
+  font-family: Kenyan-Coffee;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
