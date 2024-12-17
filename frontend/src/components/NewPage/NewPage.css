@@ -1,0 +1,19 @@
+.new-page-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+}
+
+.about-us {
+    object-fit: cover;
+    width: 100%;
+}
+
+.about-us-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 8rem;
+}

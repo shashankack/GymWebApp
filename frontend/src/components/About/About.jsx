@@ -95,17 +95,21 @@ const About = () => {
   useEffect(() => {
     const cards = gsap.utils.toArray(".stack-card");
 
-    cards.forEach((card) => {
+    cards.forEach((card, index) => {
+      const isLastCard = index === cards.length - 1;
+
       ScrollTrigger.create({
         trigger: card,
-        start: "top 20%", // Trigger when 20% of the viewport is available
-        pin: true,
-        pinSpacing: false,
+        start: "top 15%",
+        pin: !isLastCard, // Do not pin the last card
+        pinSpacing: isLastCard, // Allow spacing for smooth scroll transition
         onUpdate: (self) => {
-          if (self.progress > 0.3) {
-            gsap.to(card, { autoAlpha: 0 });
-          } else {
-            gsap.to(card, { autoAlpha: 1 });
+          if (!isLastCard) {
+            if (self.progress > 0.5) {
+              gsap.to(card, { autoAlpha: 0 }); // Fade out non-last cards
+            } else {
+              gsap.to(card, { autoAlpha: 1 });
+            }
           }
         },
       });
@@ -118,10 +122,10 @@ const About = () => {
 
   return (
     <section className="about-section" id="about" ref={sectionRef}>
-      <div className="content-container">
-        <div className="image-wrapper">
+      <div className="about-content-container">
+        <div className="about-image-wrapper">
+          <img ref={imageRef} src={img} />
           <h1 className="about-heading">OUR CLASSES</h1>
-          <img className="gradient-underline" ref={imageRef} src={img} />
         </div>
         <p className="about-text">
           On over 1500 m², we offer you a broad spectrum of martial arts,

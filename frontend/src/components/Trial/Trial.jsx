@@ -7,13 +7,14 @@ import gradient from "../../assets/Rectangle_Gradient.webp";
 const Trial = () => {
   const sectionRef = useRef(null);
   const imageRef = useRef(null);
+  const gradientRef = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 50%",
-        end: "top 40%",
+        start: "top 70%",
+        end: "bottom 40%",
         toggleActions: "play none none reverse",
         scrub: false,
       },
@@ -26,15 +27,16 @@ const Trial = () => {
         clipPath: "inset(0% 0% 0% 0%)",
         duration: 1.5,
         ease: "power4.out",
-      }
-    );
+      });
   }, []);
 
   return (
     <section className="trial-section" id="trial" ref={sectionRef}>
-      <div className="trial-text-container">
-        <h1 className="trial-title">Trial Training</h1>
-        <img className="gradient-underline" ref={imageRef} src={gradient} />
+      <div className="trial-content-container">
+        <div className="trial-image-wrapper">
+          <h1 className="trial-heading">Trial Training</h1>
+          <img src={gradient} />
+        </div>
         <p className="trial-text">
           You want to try out a free training session with us? No problem! Just
           come by during our regular opening hours and talk to our team at the

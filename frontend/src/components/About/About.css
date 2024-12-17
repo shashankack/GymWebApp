@@ -8,38 +8,41 @@
   padding: 2rem;
 }
 
-.content-container {
+.about-content-container {
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   text-align: center;
-}
-
-.about-heading {
-  font-family: Keyan-Coffee;
-  font-size: 7rem;
-  font-weight: 800;
-  color: #000;
-  margin: 0;
   position: relative;
-  z-index: 2;
 }
 
-.image-wrapper img {
+.about-image-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15%;
-  top: 10%;
-  transform: translate(-0%, -30%);
+  position: relative;
+  width: 100%;
 }
 
-.gradient-underline {
-  width: 10px;
+.about-image-wrapper img {
+  rotate: 90deg;
+  width: 15%;
   height: auto;
-  position: relative;
+  display: block;
+}
+
+.about-heading {
+  position: absolute; /* Position it on top of the gradient image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center it */
+  font-family: Keyan-Coffee;
+  font-size: 7rem;
+  color: #000;
+  text-align: center;
+  letter-spacing: 2px;
+  z-index: 2; /* Ensure it is above the image */
 }
 
 .about-text {
@@ -146,18 +149,24 @@
   }
 
   .about-heading {
-    font-size: 5rem;
+    font-size: 6rem;
+    text-wrap: nowrap;
+  }
+
+  .about-image-wrapper img {
+    width: 20%;
   }
 
   .about-text {
-    font-size: 16px;
+    font-size: 17px;
     margin-top: 2rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .about-heading {
-    font-size: 4rem;
+    font-size: 3rem;
+    text-wrap: nowrap;
   }
 
   .stacked-cards-container {
@@ -167,14 +176,7 @@
   .grid-container {
     display: none;
   }
-
-  .gradient-underline {
-    width: 20px;
-    height: auto;
-  }
-
-  .image-wrapper img {
-    width: 50%;
-    transform: translate(30%, -25%);
+  .about-image-wrapper img {
+    width: 25%;
   }
 }
