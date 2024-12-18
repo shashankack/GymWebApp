@@ -1,7 +1,6 @@
 footer {
   height: 50vh;
   background-color: #111;
-  backdrop-filter: blur(10px);
   overflow: hidden;
 }
 
@@ -15,6 +14,7 @@ section.footer-container {
 }
 
 .footer-logo {
+  margin-top: 3rem;
   font-size: 7rem;
   font-family: Kenyan-Coffee;
 }
@@ -26,3 +26,97 @@ section.footer-container {
   padding: 1rem;
 }
 
+.footer-social {
+  margin-top: 2rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.footer-social a {
+  color: #f0f0f0;
+  font-size: 2rem;
+}
+
+.footer-social a:hover {
+  color: #838383;
+  transition: all 0.3s ease;
+  scale: 1.2;
+  rotate: 20deg;
+}
+
+.footer-nav-menu {
+  display: flex;
+  gap: 30px;
+  font-variant: small-caps;
+  margin-right: 7rem;
+}
+
+.footer-nav-menu a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.footer-nav-menu a:hover {
+  color: #838383;
+}
+
+.footer-nav-menu a:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    height: 60vh;
+  }
+
+  .footer-logo {
+    margin-top: 7rem;
+    font-size: 5rem;
+  }
+
+  .footer-social {
+    margin-top: 1rem;
+  }
+
+  .footer-nav-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  footer {
+    height: 70vh;
+  }
+
+  .footer-logo {
+    margin-top: 10rem;
+    font-size: 3rem;
+  }
+
+  .footer-social {
+    margin-top: 1rem;
+  }
+
+  .footer-nav-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+  }
+  
+}
