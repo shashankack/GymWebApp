@@ -2,9 +2,15 @@
 
 .title {
   font-size: 2rem;
-  color: black;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-family: Keyan-Coffee;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
   background-color: transparent;
-  position: relative;
+  position: absolute;
 }
 
 .des {
