@@ -1,5 +1,11 @@
 /* src/Projects.css */
 
+@media screen and (min-width: 600px) {
+  .projects-container {
+    display: none;
+  }
+}
+
 .title {
   font-size: 2rem;
   color: white;
