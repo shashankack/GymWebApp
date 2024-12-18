@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./About.css";
 import img from "../../assets/Rectangle_Gradient.webp";
 
+import Project from "../Project/Project";
+
 import img1 from "../../assets/BJJ.webp";
 import img2 from "../../assets/BOXING.webp";
 import img3 from "../../assets/FITNESS.webp";
@@ -94,13 +96,13 @@ const About = () => {
 
   useEffect(() => {
     const cards = gsap.utils.toArray(".stack-card");
-  
+
     cards.forEach((card, index) => {
       const isLastCard = index === cards.length - 1;
-  
+
       ScrollTrigger.create({
         trigger: card,
-        start: "top 15%", 
+        start: "top 15%",
         pin: !isLastCard, // Do not pin the last card
         pinSpacing: isLastCard, // Allow spacing for smooth scroll transition
         onUpdate: (self) => {
@@ -114,12 +116,11 @@ const About = () => {
         },
       });
     });
-  
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
-  
 
   return (
     <section className="about-section" id="about" ref={sectionRef}>
@@ -159,8 +160,9 @@ const About = () => {
         </div>
 
         {/* Stacked Cards View for Mobile */}
-        <div className="stacked-cards-container">
-          {gridItems.map((item) => (
+        <Project projects={gridItems} />
+        {/* <div className="stacked-cards-container">
+           {gridItems.map((item) => (
             <div className="stack-card panel" key={item.id}>
               <img
                 src={item.defaultImg}
@@ -169,8 +171,8 @@ const About = () => {
               />
               <h2 className="stack-card-title">{item.title}</h2>
             </div>
-          ))}
-        </div>
+          ))} 
+        </div> */}
       </div>
     </section>
   );
